@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mon application Vue.js</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="showText = !showText">Show Text</button>
+        <div v-show="showText" class="modal">
+            Toy le text
+        </div>
+        <ul>
+            <li v-for="item in shop">
+                <a v-bind:href="item.url">{{ item.label }}</a> - {{ item.price }}$
+            </li>
+        </ul>
+        <p>Total : {{ totalAmount }}$</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                shop: [
+                    {
+                        label: 'apple',
+                        price : 10,
+                        url: '/apple.html'
+                    },
+                    {
+                        label: 'banana',
+                        price : 7,
+                        url: '/banana.html'
+                    },
+                    {
+                        label: 'coconut',
+                        price : 2,
+                        url: '/coconut.html'
+                    }
+                ],
+                showText: false
+            },
+            computed: {
+                totalAmount () {
+                    let total = 0
+                    this.shop.forEach(item => {
+                        total += item.price
+                    })
+                    return total
+                }
+            },
+            methods: {
+                showAlert() {
+                    alert("Alert toy aka !")
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "./vue3-esm.js"
+    }
+  }
+</script>
+
+<div id="app">Hello {{ message }}</div>
+
+<script type="module">
+  import { createApp } from 'vue'
+
+  createApp({
+    data()  {
+      return {
+        message: "Stenny"
+      }
+    }
+  }).mount('#app')
+
+
+</script>

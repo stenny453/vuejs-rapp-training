@@ -7,10 +7,14 @@
 </script>
 
 <div id="app"></div>
+<Link/>
 
 <script type="module">
   import { createApp } from 'vue'
   import CIN from './components/cin'
+  import Link from './components/link'
 
-  createApp(CIN).mount('#app')
+  const app = createApp(CIN)
+  app.component(Link)
+  app.mount('#app')
 </script>

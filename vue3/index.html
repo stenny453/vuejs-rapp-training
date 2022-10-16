@@ -12,6 +12,7 @@
 <div id="main">
   <div> {{texthtml}} </div>
   <div v-html="texthtml"></div>
+  <div v-bind="attributeObject">Dynamic attribut</div>
 </div>
 
 <script type="module">
@@ -27,6 +28,10 @@
     data() {
       return {
         texthtml : '<span><b>Bolder</b></span>',
+        attributeObject: {
+          id: "testId",
+          class: "testClass"
+        }
       }
     }
   })

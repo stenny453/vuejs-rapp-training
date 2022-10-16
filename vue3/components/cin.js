@@ -7,7 +7,7 @@ export default {
     },
     methods: {
         callMe() {
-            alert("This is me")
+            console.log("This is me")
         }
     },
     mounted() {

@@ -15,10 +15,13 @@
   <div v-bind="attributeObject">Dynamic attribut</div>
 </div>
 
+<div id="portfolio"></div>
+
 <script type="module">
   import { createApp } from 'vue'
   import CIN from './components/cin'
   import Link from './components/link'
+  import Porfolio from './components/portfolio'
 
   const app = createApp(CIN)
   app.component(Link)
@@ -36,4 +39,7 @@
     }
   })
   main.mount("#main")
+
+  const portfolio = createApp(Porfolio)
+  portfolio.mount('#portfolio')
 </script>

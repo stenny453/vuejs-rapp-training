@@ -6,8 +6,13 @@
   }
 </script>
 
+
 <div id="app"></div>
-<Link/>
+
+<div id="main">
+  <div> {{texthtml}} </div>
+  <div v-html="texthtml"></div>
+</div>
 
 <script type="module">
   import { createApp } from 'vue'
@@ -17,4 +22,13 @@
   const app = createApp(CIN)
   app.component(Link)
   app.mount('#app')
+
+  const main = createApp({
+    data() {
+      return {
+        texthtml : '<span><b>Bolder</b></span>',
+      }
+    }
+  })
+  main.mount("#main")
 </script>

@@ -24,11 +24,16 @@
 
 <Link class="callInjection"/>
 
+<div>*********</div>
+
+<div id="techno"></div>
+
 <script type="module">
   import { createApp } from 'vue'
   import CIN from './components/cin'
   import Link from './components/link'
   import Porfolio from './components/portfolio'
+  import Techno from './components/techno'
 
   const app = createApp(CIN)
   app.component(Link)
@@ -49,4 +54,7 @@
 
   const portfolio = createApp(Porfolio)
   portfolio.mount('#portfolio')
+
+  const techno = createApp(Techno)
+  techno.mount('#techno')
 </script>

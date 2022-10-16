@@ -4,5 +4,5 @@ export default {
             fb : "https://facebook.com"
         }
     },
-    template: `<div>Link {{ fb }}</div>`
+    template: `<div :class="$attrs.class">Link {{ fb }}</div>`
 }

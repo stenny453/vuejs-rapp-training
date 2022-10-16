@@ -2,7 +2,13 @@ export default {
     data() {
         return {
             name: "Gabriel",
-            job: "Fullstack"
+            job: "Fullstack",
+            active: true,
+            error: true,
+            awarded: {
+                first: true,
+                'not-only': false
+            }
         }
     },
     methods: {
@@ -13,5 +19,11 @@ export default {
     mounted() {
         this.callMe()
     },
-    template: `<div>CIN : {{ name }} - {{ job }} </div>`
+    template: `
+    <div>
+        <div :class="awarded">Awarded</div>
+        <div :class="{ active: active, 'text-error' : error }">
+            CIN : {{ name }} - {{ job }} 
+        </div>
+    </div>`
 }

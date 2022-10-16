@@ -6,7 +6,8 @@ export default {
                 "prestashop",
             ],
             firstname: "Stenny",
-            lastname: "Gabriel"    
+            lastname: "Gabriel",
+            expert: true
         }
     },
     computed: {
@@ -21,7 +22,13 @@ export default {
             set(name) {
                 [this.firstname, this.lastname] = name.split(' ')
             }
+        },
+        devClass() {
+            return {
+                master : this.expert
+            }
         }
     },
-    template: `<div>{{ fullname = 'Lady Gaga' }} - I am an {{ isExpert }}</div>`
+    template: `<div :class="devClass">{{ fullname = 'Lady Gaga' }} - 
+    <span :class="[firstname, lastname]">I am an {{ isExpert }}</span></div>`
 }

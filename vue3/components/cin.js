@@ -1,4 +1,3 @@
-<script>
 export default {
     data() {
         return {
@@ -8,4 +7,3 @@ export default {
     },
     template: `<div>CIN : {{ name }} - {{ job }} </div>`
 }
-</script>

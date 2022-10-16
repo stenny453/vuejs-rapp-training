@@ -6,18 +6,11 @@
   }
 </script>
 
-<div id="app">Hello {{ message }}</div>
+<div id="app"></div>
 
 <script type="module">
   import { createApp } from 'vue'
+  import CIN from './components/cin'
 
-  createApp({
-    data()  {
-      return {
-        message: "Stenny"
-      }
-    }
-  }).mount('#app')
-
-
+  createApp(CIN).mount('#app')
 </script>

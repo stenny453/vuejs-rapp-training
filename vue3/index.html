@@ -37,6 +37,10 @@
 <h3>- CONTRACT -</h3>
 <div id="contract"></div>
 
+<div>*********</div>
+<h3>- FEEDBACK -</h3>
+<div id="feedback"></div>
+
 <script type="module">
   import { createApp } from 'vue'
   import CIN from './components/cin'
@@ -45,6 +49,7 @@
   import Techno from './components/techno'
   import Comment from './components/comment'
   import Contract from './components/contract'
+  import Feedback from './components/feedback'
 
   const app = createApp(CIN)
   app.component(Link)
@@ -74,4 +79,7 @@
 
   const contract = createApp(Contract)
   contract.mount('#contract')
+
+  const feedback = createApp(Feedback)
+  feedback.mount('#feedback')
 </script>

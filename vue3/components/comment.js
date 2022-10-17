@@ -29,6 +29,20 @@ export default {
         <div>****</div>
         <label>Press ctrl + click</label>
         <button @click.ctrl="ctrlClick"> Ctrl + click </button>
+
+        <div>****</div>
+        <input type="text" :value="comment" @input="(event) => comment = event.target.value"/>
+        <div>****</div>
+        <div>
+            <textarea v-model="comment"></textarea>
+
+            <p>With lazy v-model</p>
+            <textarea v-model.lazy="comment"></textarea>
+        </div>
+        <div>
+            <p>v-model trim</p>
+            <input v-model.trim="comment" />
+        </div>
     </div>
     `
 }

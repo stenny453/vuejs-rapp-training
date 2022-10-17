@@ -17,16 +17,17 @@
 </div>
 
 <div>*********</div>
-
 <div id="portfolio"></div>
 
 <div>*********</div>
-
-<Link class="callInjection"/>
+<Link class="callInjection" />
 
 <div>*********</div>
-
 <div id="techno"></div>
+
+<div>*********</div>
+<div id="comment"></div>
+
 
 <script type="module">
   import { createApp } from 'vue'
@@ -34,6 +35,7 @@
   import Link from './components/link'
   import Porfolio from './components/portfolio'
   import Techno from './components/techno'
+  import Comment from './components/comment'
 
   const app = createApp(CIN)
   app.component(Link)
@@ -42,7 +44,7 @@
   const main = createApp({
     data() {
       return {
-        texthtml : '<span><b>Bolder</b></span>',
+        texthtml: '<span><b>Bolder</b></span>',
         attributeObject: {
           id: "testId",
           class: "testClass"
@@ -57,4 +59,7 @@
 
   const techno = createApp(Techno)
   techno.mount('#techno')
+
+  const comment = createApp(Comment)
+  comment.mount('#comment')
 </script>

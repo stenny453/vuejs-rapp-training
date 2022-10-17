@@ -16,10 +16,22 @@ export default {
     computed: {
         eventAverage() {
             return this.average.filter((item) => item % 2 === 0)
+        },
+    },
+    methods: {
+        sourceCode(link, event) {
+            event.preventDefault()
+            alert(link)
+        },
+        noAction() {
+            console.log("No action");
+        },
+        scrolling() {
+            console.log("Scrolling");
         }
     },
     template: 
-    `<div>
+    `<div @scroll.passive="scrolling">
         <div v-for="(techno, index) of technos">
             {{ index + 1 }} - {{ techno.name }}
         </div>
@@ -37,5 +49,15 @@ export default {
         <div v-for="item in eventAverage">
             {{ item }}
         </div>
+        <div>** Event handling --- **</div>
+        <button @click="sourceCode('github', $event)">
+            Source code
+        </button>
+        <button @click="(event) => sourceCode('github', event)">
+            Source code with arrow function
+        </button>
+        <button @click.stop="noAction">
+            No propagation
+        </button>
     </div>`
 }

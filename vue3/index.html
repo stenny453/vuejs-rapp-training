@@ -7,7 +7,10 @@
 </script>
 
 <h3>- CIN -</h3>
-<div id="app"></div>
+<div id="app">
+  <Link class="callInjection" />
+
+</div>
 
 <div>*********</div>
 
@@ -23,7 +26,6 @@
 <div id="portfolio"></div>
 
 <div>*********</div>
-<Link class="callInjection" />
 
 <div>*********</div>
 <h3>- TECHNO -</h3>
@@ -52,7 +54,6 @@
   import Feedback from './components/feedback'
 
   const app = createApp(CIN)
-  app.component(Link)
   app.mount('#app')
 
   const main = createApp({

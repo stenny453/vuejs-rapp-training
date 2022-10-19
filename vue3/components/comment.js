@@ -22,9 +22,12 @@ export default {
     template: `
     <div>
         <label>Leave a comment </label>
-        <input :value="comment" type="text" 
+        <input v-model="comment" type="text" 
         @keyup.enter="submit($event)" 
         @keyup.down="pageDown($event)"/>
+
+        <input :value="comment" type="text" 
+        @keyup.enter="(event) => comment = event.target.value"/>
 
         <div>****</div>
         <label>Press ctrl + click</label>

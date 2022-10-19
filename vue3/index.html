@@ -6,10 +6,15 @@
   }
 </script>
 
-<div id="app"></div>
+<h3>- CIN -</h3>
+<div id="app">
+  <Link class="callInjection" />
+
+</div>
 
 <div>*********</div>
 
+<h3>- MAIN -</h3>
 <div id="main">
   <div> {{texthtml}} </div>
   <div v-html="texthtml"></div>
@@ -17,17 +22,26 @@
 </div>
 
 <div>*********</div>
+<h3>- PORFOLIO -</h3>
 <div id="portfolio"></div>
 
 <div>*********</div>
-<Link class="callInjection" />
 
 <div>*********</div>
+<h3>- TECHNO -</h3>
 <div id="techno"></div>
 
 <div>*********</div>
+<h3>- COMMENT -</h3>
 <div id="comment"></div>
 
+<div>*********</div>
+<h3>- CONTRACT -</h3>
+<div id="contract"></div>
+
+<div>*********</div>
+<h3>- FEEDBACK -</h3>
+<div id="feedback"></div>
 
 <script type="module">
   import { createApp } from 'vue'
@@ -36,9 +50,10 @@
   import Porfolio from './components/portfolio'
   import Techno from './components/techno'
   import Comment from './components/comment'
+  import Contract from './components/contract'
+  import Feedback from './components/feedback'
 
   const app = createApp(CIN)
-  app.component(Link)
   app.mount('#app')
 
   const main = createApp({
@@ -62,4 +77,10 @@
 
   const comment = createApp(Comment)
   comment.mount('#comment')
+
+  const contract = createApp(Contract)
+  contract.mount('#contract')
+
+  const feedback = createApp(Feedback)
+  feedback.mount('#feedback')
 </script>

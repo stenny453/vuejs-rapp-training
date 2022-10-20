@@ -1,6 +1,6 @@
 <template>
     <div id="contain-image">
-        <!-- <div>
+        <div>
             <h3>{{ msg }}</h3>
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="car">
         </div>
@@ -14,7 +14,7 @@
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
-        </div> -->
+        </div>
         <br>
         <div style="height: 100vh;background-color: green;"></div>
         <div>
@@ -54,15 +54,15 @@ export default {
             { 
                 duration: 3,
                 rotate: 360,
-                // onUpdate() {
-                //     console.log("Updated");
-                // },
-                // onStart() {
-                //     console.log("Started");
-                // },
-                // onComplete() {
-                //     console.log("Completed");
-                // }
+                onUpdate() {
+                    console.log("Updated");
+                },
+                onStart() {
+                    console.log("Started");
+                },
+                onComplete() {
+                    console.log("Completed");
+                }
             });
 
             tl.to(".sw", 
@@ -83,13 +83,18 @@ export default {
                     trigger: ".fr",
                     toggleActions: "restart pause reverse pause",
                     scrub: true,
+                    pin: true,
+                    // pinSpacing: false,
+                    start: "center center",
+                    end: "+=300px"
                     // scrub: 2, // scrub for 2 seconds
-                    markers: true
+                    // markers: true
                 },
-                duration: 3,
+                duration: 2,
                 opacity: 1,
                 scale: 0.3,
                 ease: "elastic",
+                // rotate: 360
             })
         }
     },  

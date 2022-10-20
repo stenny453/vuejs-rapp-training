@@ -37,9 +37,11 @@ export default {
             //     ease: "elastic" 
             // });
 
-            gsap.set(".car", { transformOrigin: "50% 50%" });
+            const tl = gsap.timeline();
 
-            gsap.to(".car", 
+            tl.set(".car", { transformOrigin: "50% 50%" });
+
+            tl.to(".car", 
             { 
                 duration: 3,
                 rotate: 360,
@@ -54,13 +56,13 @@ export default {
                 }
             });
 
-            gsap.to(".sw", 
+            tl.to(".sw", 
             { 
                 duration: 2, opacity: 0, scale: 0.3, 
                 ease: "back", stagger: 1 
             })
 
-            gsap.from(".sg", 
+            tl.from(".sg", 
             { 
                 duration: 2, opacity: 0, 
                 stagger: 1, x: "random(-100, 100)",

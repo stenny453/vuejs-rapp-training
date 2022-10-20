@@ -81,7 +81,9 @@ export default {
             gsap.to(".fr", {
                 scrollTrigger: {
                     trigger: ".fr",
-                    toggleActions: "restart pause reverse pause"
+                    toggleActions: "restart pause reverse pause",
+                    scrub: true,
+                    markers: true
                 },
                 duration: 3,
                 opacity: 1,

@@ -1,6 +1,6 @@
 <template>
     <div id="contain-image">
-        <div>
+        <!-- <div>
             <h3>{{ msg }}</h3>
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="car">
         </div>
@@ -14,12 +14,13 @@
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
-        </div>
+        </div> -->
         <br>
-        <div style="height: 500px;"></div>
+        <div style="height: 100vh;background-color: green;"></div>
         <div>
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="fr">
         </div>
+        <div style="height: 100vh;background-color: cyan;"></div>
         <br>
     </div>
 </template>
@@ -53,15 +54,15 @@ export default {
             { 
                 duration: 3,
                 rotate: 360,
-                onUpdate() {
-                    console.log("Updated");
-                },
-                onStart() {
-                    console.log("Started");
-                },
-                onComplete() {
-                    console.log("Completed");
-                }
+                // onUpdate() {
+                //     console.log("Updated");
+                // },
+                // onStart() {
+                //     console.log("Started");
+                // },
+                // onComplete() {
+                //     console.log("Completed");
+                // }
             });
 
             tl.to(".sw", 
@@ -78,7 +79,10 @@ export default {
             })
 
             gsap.to(".fr", {
-                scrollTrigger: ".fr",
+                scrollTrigger: {
+                    trigger: ".fr",
+                    toggleActions: "restart pause reverse pause"
+                },
                 duration: 3,
                 opacity: 1,
                 scale: 0.3,

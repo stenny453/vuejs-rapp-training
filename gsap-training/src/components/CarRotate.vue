@@ -15,11 +15,18 @@
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="sg">
         </div>
+        <br>
+        <div style="height: 500px;"></div>
+        <div>
+            <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="fr">
+        </div>
+        <br>
     </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: 'CarRotate',
@@ -36,12 +43,13 @@ export default {
             //     border: "4px solid black", borderRadius: "5px",
             //     ease: "elastic" 
             // });
+            gsap.registerPlugin(ScrollTrigger);
 
             const tl = gsap.timeline();
 
-            tl.set(".car", { transformOrigin: "50% 50%" });
+            gsap.set(".car", { transformOrigin: "50% 50%" });
 
-            tl.to(".car", 
+            gsap.to(".car", 
             { 
                 duration: 3,
                 rotate: 360,
@@ -68,6 +76,14 @@ export default {
                 stagger: 1, x: "random(-100, 100)",
                 // delay: 2
             })
+
+            gsap.to(".fr", {
+                scrollTrigger: ".fr",
+                duration: 3,
+                opacity: 1,
+                scale: 0.3,
+                ease: "elastic",
+            })
         }
     },  
     mounted() {
@@ -84,5 +100,9 @@ export default {
 
     .car-list img {
         height: 100px;
+    }
+
+    .fr {
+        max-width: 100%;
     }
 </style>

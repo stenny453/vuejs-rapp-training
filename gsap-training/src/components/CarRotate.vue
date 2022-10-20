@@ -83,6 +83,7 @@ export default {
                     trigger: ".fr",
                     toggleActions: "restart pause reverse pause",
                     scrub: true,
+                    // scrub: 2, // scrub for 2 seconds
                     markers: true
                 },
                 duration: 3,

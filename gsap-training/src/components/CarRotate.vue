@@ -17,7 +17,7 @@
         </div>
         <br>
         <div style="height: 100vh;background-color: green;"></div>
-        <div>
+        <div style="text-align: left;">
             <img src="./../assets/images/4542166_W177_perf_OW_28.jpg" alt="var-illustration" class="fr">
         </div>
         <div style="height: 100vh;background-color: cyan;"></div>
@@ -81,19 +81,20 @@ export default {
             gsap.to(".fr", {
                 scrollTrigger: {
                     trigger: ".fr",
-                    toggleActions: "restart pause reverse pause",
+                    // toggleActions: "restart pause reverse none",
                     scrub: true,
-                    pin: true,
+                    // pin: true,
                     // pinSpacing: false,
-                    start: "center center",
-                    end: "+=300px"
+                    start: "top center",
+                    end: "+=500px"
                     // scrub: 2, // scrub for 2 seconds
                     // markers: true
                 },
-                duration: 2,
+                duration: 1,
                 opacity: 1,
-                scale: 0.3,
-                ease: "elastic",
+                scale: 1.3,
+                // ease: "elastic",
+                x: 800
                 // rotate: 360
             })
         }
@@ -115,6 +116,7 @@ export default {
     }
 
     .fr {
-        max-width: 100%;
+        /* max-width: 100%; */
+        width: 400px;
     }
 </style>
